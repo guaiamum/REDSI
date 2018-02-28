@@ -1,7 +1,6 @@
 #include <iostream>
-
 using namespace std;
-//FUNCTION TROCO
+
 int main(){
   int a, b, prod = 0;
 

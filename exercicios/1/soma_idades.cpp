@@ -1,7 +1,6 @@
 #include <iostream>
-
 using namespace std;
-//FUNCTION TROCO
+
 int main(){
   int soma = 0, idade;
 
