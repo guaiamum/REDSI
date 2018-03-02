@@ -20,7 +20,7 @@ int main() {
 
   // *******PROCESSAMENTO
   for(int i = 0;i < n;i++){
-    float desvio += sqrt(pow(arr[i] - media,2));
+    float desvio = sqrt(pow(arr[i] - media,2));
     cout << "Desvio de " << arr[i] << " à média é: " << arr[i] - media << endl;
   }
 
