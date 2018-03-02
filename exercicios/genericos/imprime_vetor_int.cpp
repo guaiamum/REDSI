@@ -1,8 +1,7 @@
 using namespace std;
 
-void imprimeVetorInt(int* arr){
-  int n = sizeof(arr) / sizeof(int);
-
+void imprimeVetorInt(int *arr, size_t n){
+  // int n = sizeof(arr) / sizeof(int);
   if(n > 0){
     cout << "\n\t Número de posições: " << n << endl;
 
