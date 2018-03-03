@@ -20,7 +20,7 @@ int main() {
 
     for(int j = 0;j < i;j++){
       if(arr[j] > temp){
-        troca(&arr[j], &temp);
+        troca(arr[j], temp);
       }
     }
     arr[i] = temp;
