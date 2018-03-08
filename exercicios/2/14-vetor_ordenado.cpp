@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../genericos/imprime_vetor_int.cpp"
+#include "../genericos/funcoes_vetor_int.cpp"
 #include "../genericos/troca.cpp"
 using namespace std;
 
