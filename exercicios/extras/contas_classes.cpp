@@ -10,12 +10,13 @@ private:
 public:
   std::string correntista;
 
-  Conta(int id, std::string nome){
-    id = id;
-    correntista = nome;
+  Conta(int id, std::string correntista){
+    this->id = id;
+    this->correntista = correntista;
   }
 
   void consoleConta(){
+    cout << "--------------------------------\n";
     cout << "\tConta número: " << id << endl;
     cout << "\tCorrentista: " << correntista << endl;
   }
@@ -23,31 +24,34 @@ public:
 
 class ArrayContas {
 private:
- static int num_contas;
+ int num_contas;
 public:
   vector<Conta*> contas;
 
   ArrayContas(){
-      num_contas = 0;
+    num_contas = 0;
   }
 
   void novaConta(){
     cout << "Entre com o primeiro nome do correntista: ";
     string nome;
     cin >> nome;
-    this->num_contas++;
-    // cout << "\tnumero de contas: " << num_contas << endl;
+    num_contas++;
 
-    Conta* cnt = new Conta(this->num_contas, nome);
+    Conta* cnt = new Conta(num_contas, nome);
     contas.push_back(cnt);
   }
 
   void consoleContas(){
-    for (std::vector<Conta*>::iterator it = this->contas.begin(); it != this->contas.end(); ++it){
-      (*it)->consoleConta();
-      cout << "\n**********\n";
+    if(contas.size() == 0){
+        cout << "\nNão há registros de contas! \n";
+        return;
     }
-    std::cout << '\n';
+
+    for (std::vector<Conta*>::iterator it = contas.begin(); it != contas.end(); ++it){
+      (*it)->consoleConta();
+    }
+    std::cout << "\n********************\n";
   }
 };
 
@@ -56,14 +60,15 @@ int main() {
   char opcao = 'z';
 
   while (opcao != 'q') {
-    cout << "Digite a opção desejada: \n\t(a): Criar conta \n\t(b): Listar contas \n\t(q): Sair \n: ";
+    cout << "\nDigite a opção desejada: \n\t(c): Criar conta \n\t(l): Listar contas \n\t(d): Deletar conta \n\t(q): Sair \n: ";
     cin >> opcao;
 
-    if(opcao == 'a'){
+    if(opcao == 'c'){
       contas.novaConta();
-    } else if(opcao == 'b'){
+    } else if(opcao == 'l'){
       contas.consoleContas();
-      // cout << "Ainda não disponível! \n";
+    } else if(opcao == 'd'){
+      cout << "Ainda não disponível! \n";
     }
   }
 
