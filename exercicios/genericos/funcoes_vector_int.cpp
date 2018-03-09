@@ -6,3 +6,16 @@ void imprime_vector_int(std::vector<int> vetor){
   }
   std::cout << '\n';
 }
+
+
+// FUNCAO DE RANDOMIZAR VECTOR DE L POSICOES
+std::vector<int> randomVector(int L){
+  std::vector<int> vetor;
+  srand((unsigned)time(0));
+
+  for(int i = 0; i < L; i++){
+    vetor.push_back((rand()%100)+1);
+  }
+
+  return vetor;
+}

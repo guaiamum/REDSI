@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../genericos/funcoes_vetor_int.cpp"
+#include "../genericos/funcoes_array_int.cpp"
 #include "../genericos/troca.cpp"
 using namespace std;
 
