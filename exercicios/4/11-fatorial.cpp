@@ -45,7 +45,7 @@ int fatorial(int n){
 void fatorial(int n, int &resultado){
   resultado = 1;
 
-  while(n > 0){
+  while(n > 1){
     resultado *= n;
     n--;
   }

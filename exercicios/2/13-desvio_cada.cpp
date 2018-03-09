@@ -7,7 +7,7 @@ int main() {
   float media = 0;
 
   // *******LEITURA
-  cout << "Digite o número de inteiros a ler \n";
+  cout << "Digite o número de inteiros a ler: ";
   cin >> n;
   int arr[n];
 
@@ -16,15 +16,13 @@ int main() {
     cin >> arr[i];
     media += arr[i];
   }
-  media = media / n; //DEBUG: cout << "Média: " << media << endl;
+
+  media /= n; //DEBUG: cout << "Média: " << media << endl;
 
   // *******PROCESSAMENTO
-  for(int i = 0;i < n;i++){
-    float desvio = sqrt(pow(arr[i] - media,2));
+  for(int i = 0; i < n; i++){
     cout << "Desvio de " << arr[i] << " à média é: " << arr[i] - media << endl;
   }
-
-  // cout << "Desvio: " << desvio;
 
   return 0;
 }
