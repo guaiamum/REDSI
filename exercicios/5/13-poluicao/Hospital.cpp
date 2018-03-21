@@ -1,5 +1,6 @@
 #include "Hospital.h"
-// #include <iostream>
+#include <string>
+#include <iostream>
 // using namespace std;
 
 Hospital::Hospital(){
@@ -9,7 +10,10 @@ Hospital::Hospital(){
 
 Hospital::Hospital(string nome, float indice){
   this->nome = nome;
+  // this->nome.copy(nome, sizeof(nome));
   this->indice = indice;
+
+  // std::cout << this->nome;
 }
 
 Hospital::Hospital(Hospital const &hospital){
@@ -17,7 +21,8 @@ Hospital::Hospital(Hospital const &hospital){
   this->indice = hospital.indice;
 }
 
-string Hospital::getNome(){
+std::string Hospital::getNome(){
+  // std::cout << this->nome;
   return this->nome;
 }
 

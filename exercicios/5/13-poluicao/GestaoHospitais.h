@@ -18,6 +18,7 @@ public:
 
   void readHospital();
   void readManyHospitais();
+  void printAllHospitais();
 
   Hospital findHospital(string nome);
 };

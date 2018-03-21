@@ -5,14 +5,14 @@
 using namespace std;
 
 class Hospital{
-  string nome;
+  std::string nome;
   float indice;
 public:
   Hospital();
-  Hospital(string nome, float indice);
+  Hospital(std::string nome, float indice);
   Hospital(Hospital const &hospital);
 
-  string getNome();
+  std::string getNome();
   float getIndice();
   static Hospital readHospital();
 };

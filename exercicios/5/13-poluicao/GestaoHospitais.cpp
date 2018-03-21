@@ -41,6 +41,15 @@ void GestaoHospitais::readManyHospitais(){
   }
 }
 
+void GestaoHospitais::printAllHospitais(){
+  std::cout << '\n';
+  for (std::vector<Hospital>::iterator it = this->hospitais.begin() ; it != this->hospitais.end(); ++it){
+    // std::cout << "Tamanho: " << (*it).getNome().size();
+    std::cout << " Nome: " << (*it).getNome() << " Indice: " << (*it).getIndice() << endl;
+  }
+  std::cout << '\n';
+}
+
 vector<Hospital> GestaoHospitais::getHospitais(){
   return this->hospitais;
 }
