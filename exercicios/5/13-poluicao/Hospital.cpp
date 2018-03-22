@@ -17,7 +17,7 @@ Hospital::Hospital(string nome, float indice){
 }
 
 Hospital::Hospital(Hospital const &hospital){
-  this->nome = nome;
+  this->nome = hospital.nome;
   this->indice = hospital.indice;
 }
 
