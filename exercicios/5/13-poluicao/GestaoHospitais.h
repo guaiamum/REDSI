@@ -19,8 +19,16 @@ public:
   void readHospital();
   void readManyHospitais();
   void printAllHospitais();
+  /**
+  Lista no console os Hospitais a encerrar por ordem decrescente
+dos seus índices
 
-  Hospital findHospital(string nome);
+    @param no parameter.
+    @return nothing.
+  */
+  void printEndHospitais();
+
+  Hospital* findHospital(string nome);
 };
 
 #endif

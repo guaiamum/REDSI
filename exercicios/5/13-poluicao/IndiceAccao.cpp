@@ -10,7 +10,7 @@ std::string IndiceAccao::acaoIndice(float indice){
   }
 
   if(indice >= 0.5 && indice < 0.6){
-    return "Encerrar! ";
+    return "Instalar Ar condicionado! ";
   }
 
   if(indice <= 0.4){

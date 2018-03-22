@@ -12,6 +12,8 @@ public:
   Hospital(std::string nome, float indice);
   Hospital(Hospital const &hospital);
 
+  bool operator < (Hospital const &rhs);
+
   std::string getNome();
   float getIndice();
   static Hospital readHospital();

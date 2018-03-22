@@ -6,29 +6,39 @@
 using namespace std;
 
 int main() {
-  Hospital hsj = Hospital("Hosp_S_Joao", 0.3);
-  // cout << "Nome: " << hsj.getNome()  << "  " << hsj.getIndice() << endl;
+  Hospital hsj = Hospital("Hosp SaoJoao", 0.3);
 
   GestaoHospitais gestao = GestaoHospitais();
   gestao.addHospital(hsj);
   gestao.readHospital();
 
   gestao.printAllHospitais();
+  cout << "----------------------\n";
 
-  cout << "Numero de hospitais: " << gestao.getNumHospitais() << endl;
+  cout << "\nEntre com o nome do hospital a pesquisar: ";
+  string nome;
+  cin >> nome;
 
-  // cout << "\nEntre com o nome do hospital a pesquisar: ";
-  // string nome;
-  // cin >> nome;
+  Hospital* achei = gestao.findHospital(nome);
+  bool continua = true;
 
-  // Hospital achei = gestao.findHospital("HospitalJoao");
-  // cout << "\nNome " << gestao.getHospitais()[0].getNome();
-  //
-  // if(!achei.getNome().empty()){
-  //   cout << achei.getNome();
-  // } else {
-  //   cout << "Hospital não encontrado! \n";
-  // }
+  if(achei){
+    IndiceAccao indice = IndiceAccao();
+    cout << "\tAcao para o hospital: " << achei->getNome() << " é de: \n\t"  <<
+      indice.acaoIndice(achei->getIndice());
+  } else {
+    continua = false;
+    cout << "\033[1;31m"<< "\tHospital não encontrado!" <<"\033[0m\n";
+  }
+
+  if(continua){
+    if(hsj < *achei){
+      cout << endl << hsj.getNome() << "(" << hsj.getIndice() << ") tem indice menor que: " << achei->getNome() << "(" << achei->getIndice() << ")\n";
+    } else{
+      cout << endl << hsj.getNome() << "(" << hsj.getIndice() << ") NÃO tem indice menor que: " << achei->getNome() << "(" << achei->getIndice() << ")\n";
+
+    }
+  }
 
   return 0;
 }

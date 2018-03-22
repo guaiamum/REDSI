@@ -44,7 +44,6 @@ void GestaoHospitais::readManyHospitais(){
 void GestaoHospitais::printAllHospitais(){
   std::cout << '\n';
   for (std::vector<Hospital>::iterator it = this->hospitais.begin() ; it != this->hospitais.end(); ++it){
-    // std::cout << "Tamanho: " << (*it).getNome().size();
     std::cout << " Nome: " << (*it).getNome() << " Indice: " << (*it).getIndice() << endl;
   }
   std::cout << '\n';
@@ -58,18 +57,15 @@ int GestaoHospitais::getNumHospitais(){
   return this->hospitais.size();
 }
 
-Hospital GestaoHospitais::findHospital(string nome){
+Hospital* GestaoHospitais::findHospital(string nome){
   std::vector<Hospital>::iterator first = this->hospitais.begin(), last = this->hospitais.end();
-  cout << "\n" << this->hospitais[0].getNome();
-  // while (first != last) {
-  //   cout << "\n\tnome: "<<(*first).getNome()<<"\n";
-  //
-  //   if((*first).getNome() == nome){
-  //     cout << "\nachei!\n";
-  //     return *first;
-  //   }
-  //   ++first;
-  // }
 
-  return Hospital();
+  while (first != last) {
+    if((*first).getNome() == nome){
+      return &(*first);
+    }
+    ++first;
+  }
+
+  return nullptr;
 }

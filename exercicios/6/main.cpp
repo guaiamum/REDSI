@@ -6,6 +6,7 @@
 using namespace std;
 
 int main() {
-
+  Editor e1 = Editor();
+  
   return 0;
 }
